@@ -23,6 +23,6 @@ composer create-project laravel/laravel gestion-musique
 - creation d'un model
 
 ```bash
-    php artisan make:model Musique/Music
+    php artisan make:model Musique/Musique
     php artisan make:model Type/Type
 ```
