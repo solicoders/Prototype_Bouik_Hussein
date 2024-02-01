@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Musique;
+namespace App\Http\Controllers\GestionMusique;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

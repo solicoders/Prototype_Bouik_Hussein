@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Models\Type;
+namespace App\Models\GestionMusique;
 
-use App\Models\Musique\Musique; // Import the Musique class
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
- class Type extends Model
+class Type extends Model
 {
-
     use HasFactory;
     public function musiques()
     {
