@@ -1,4 +1,3 @@
-# Prototype_Bouik_Hussein
 #  
 
 - Référence :   
@@ -9,8 +8,10 @@
 
 Le backlog est une liste ordonées des tâches 
 
+- **chapitre** 
+- **exposé** 
 - **feature** 
-  - [1.backlog.1.md](./Backlog/feature/1.backlog.1.md) 
+  - [1.Backlog.1.md](./Backlog/feature/1.Backlog.1.md) 
   - [2.creation-app.3.md](./Backlog/feature/2.creation-app.3.md) 
   - [3.base-de-données.4.md](./Backlog/feature/3.base-de-données.4.md) 
   - [4.jeux-test.5.md](./Backlog/feature/4.jeux-test.5.md) 
@@ -20,10 +21,6 @@ Le backlog est une liste ordonées des tâches
   - [8.Règle-gestion.9.md](./Backlog/feature/8.Règle-gestion.9.md) 
   - [9.rapport.10.md](./Backlog/feature/9.rapport.10.md) 
 - **sous-tâche** 
-
-## Documentation
-
-
 ## Livrables 
 
  
@@ -33,4 +30,8 @@ Le backlog est une liste ordonées des tâches
 - /docs 
   - Documentation 
 ## Références 
+
+ 
+
+- [Autoformation](#) 
 
