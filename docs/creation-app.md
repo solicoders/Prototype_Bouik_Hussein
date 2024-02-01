@@ -14,6 +14,15 @@ composer create-project laravel/laravel gestion-musique
 
 - utilisations d'un namespace pour le projet
 
-```php
-namespace App\Http\Controllers;
+
+```bash
+    php artisan make:controller Musique/MusicController
+    php artisan make:controller Type/TypeController
+```
+
+- creation d'un model
+
+```bash
+    php artisan make:model Musique/Music
+    php artisan make:model Type/Type
 ```
