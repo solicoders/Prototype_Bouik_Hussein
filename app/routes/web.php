@@ -18,42 +18,26 @@ use Illuminate\Support\Facades\View;
 use App\Models\GestionMusique\Musique;
 use App\Models\GestionMusique\Type;
 use App\Repository\GestionMusique\MusiquesRepository;
+use App\Http\Controllers\GestionMusique\MusicController;
+use App\Http\Controllers\GestionMusique\TypeController;
 use Illuminate\Http\Request;
 
-$musiqueRepository = new MusiquesRepository(new Musique());
-
-Route::get('/musiques', function () use ($musiqueRepository) {
-    $musiques = $musiqueRepository->getAllMusiques(); // Replace with the actual method to retrieve all musiques
-    return view('welcome')->with('musiques', $musiques);
-});
-
-Route::get('/musiques/create', function () {
-
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/musiques', function (Request $request) use ($musiqueRepository) {
-    $musiqueData = $request->all();
-    $musiqueRepository->create($musiqueData); // Replace with the actual method to create a musique
-    return view('welcome')->with('success', 'Musique created successfully');
+Route::prefix('musiques')->group(function () {
+    Route::get('/', [MusicController::class, 'index'])->name('musiques.index');
+    Route::get('/create', [MusicController::class, 'create'])->name('musiques.create');
+    Route::post('/', [MusicController::class, 'store'])->name('musiques.store');
+    Route::get('/{musiques}/edit', [MusicController::class, 'edit'])->name('musiques.edit');
+    Route::post('/{musiques}', [MusicController::class, 'update'])->name('musiques.update');
+    Route::delete('/{musiques}', [MusicController::class, 'destroy'])->name('musiques.destroy');
 });
-
-
-
-Route::get('/musiques/{id}/update', function (Request $request, $id) use ($musiqueRepository) {
-    $musiqueData =[
-        'artiste' =>'test',
-        'titre' =>'test',
-        'reference' =>'test',
-        'type_id' =>1,
-        'created_at' =>'2021-01-01',
-        'updated_at' =>'2021-01-01',
-    ];
-    $musiqueRepository->update($id, $musiqueData); // Replace with the actual method to update a musique
-    return view('welcome')->with('success', 'Musique updated successfully');
-});
-
-Route::delete('/musiques/{id}/delete', function ($id) use ($musiqueRepository) {
-    $musiqueRepository->delete($id); // Replace with the actual method to delete a musique
-    return view('welcome')->with('success', 'Musique deleted successfully');
+Route::prefix('types')->group(function () {
+    Route::get('/create', [TypeController::class, 'create'])->name('types.create');
+    Route::post('/', [TypeController::class, 'store'])->name('types.store');
+    Route::get('/{types}/edit', [TypeController::class, 'edit'])->name('types.edit');
+    Route::post('/{types}', [TypeController::class, 'update'])->name('types.update');
+    Route::delete('/{types}', [TypeController::class, 'destroy'])->name('types.destroy');
 });
