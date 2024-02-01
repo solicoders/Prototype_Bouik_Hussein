@@ -13,3 +13,7 @@ composer create-project laravel/laravel gestion-musique
 ```
 
 - utilisations d'un namespace pour le projet
+
+```php
+namespace App\Http\Controllers;
+```
