@@ -8,6 +8,8 @@ composer create-project laravel/laravel gestion-musique
 
 - installation de Admin LTE
     
-    ```bash
+```bash
     npm install admin-lte --save
-    ```
+```
+
+- utilisations d'un namespace pour le projet
