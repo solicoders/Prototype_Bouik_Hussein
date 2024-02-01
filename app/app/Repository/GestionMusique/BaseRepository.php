@@ -2,12 +2,13 @@
 
 namespace App\Repository\GestionMusique;
 
+use App\Models\GestionMusique\Musique;
 use Illuminate\Database\Eloquent\Model;
 class BaseRepository
 {
     protected $model;
 
-    public function __construct(Model $model)
+    public function __construct(Musique $model)
     {
         $this->model = $model;
     }
