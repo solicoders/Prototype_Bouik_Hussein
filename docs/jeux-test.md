@@ -1,40 +1,49 @@
-# Jeux de test
+ **# Jeux de test**
 
-This document contains the commands used for creating and running database seeders in Laravel.
+**Ce document contient les commandes utilisées pour créer et exécuter des seeders de base de données dans Laravel.**
 
-## Creating a Seeder
+## **Création d'un seeder**
 
-To create a seeder, use the `make:seeder` Artisan command:
+Pour créer un seeder, utilisez la commande Artisan `make:seeder` :
 
 ```bash
 php artisan make:seeder TypesTableSeeder
 php artisan make:seeder MusiquesTableSeeder
 ```
-## Writing a Seeder
-Open the newly created seeder file and add your data in the run method:
 
-Running a Seeder
-To run the seeder, use the db:seed Artisan command:
-    
+## **Écriture d'un seeder**
+
+Ouvrez le fichier seeder nouvellement créé et ajoutez vos données dans la méthode `run` :
+
+## **Exécution d'un seeder**
+
+Pour exécuter le seeder, utilisez la commande Artisan `db:seed` :
+
 ```bash
-    php artisan db:seed --class=TypesTableSeeder
-    php artisan db:seed --class=MusiquesTableSeeder
+php artisan db:seed --class=TypesTableSeeder
+php artisan db:seed --class=MusiquesTableSeeder
 ```
 
-Adding a Seeder to DatabaseSeeder.php
-To add a seeder to the DatabaseSeeder.php file, call the call method on the $this object inside the run method:
+## **Ajout d'un seeder au fichier DatabaseSeeder.php**
 
-```bash
-    public function run()
-    {
-        $this->call(TypesTableSeeder::class);
-        $this->call(MusiquesTableSeeder::class);
-    }
+Pour ajouter un seeder au fichier DatabaseSeeder.php, appelez la méthode `call` sur l'objet `$this` à l'intérieur de la méthode `run` :
+
+```php
+public function run()
+{
+    $this->call(TypesTableSeeder::class);
+    $this->call(MusiquesTableSeeder::class);
+}
 ```
 
-Don't forget to import the seeder at the top of your DatabaseSeeder.php file:
+N'oubliez pas d'importer le seeder en haut de votre fichier DatabaseSeeder.php :
+
+```php
+use Database\Seeders\TypesTableSeeder;
+use Database\Seeders\MusiquesTableSeeder;
+```
+Pour exécuter tous les seeders, utilisez la commande Artisan db:seed :
     
 ```bash
-        use Database\Seeders\TypesTableSeeder;
-        use Database\Seeders\MusiquesTableSeeder;
-    ```
+    php artisan db:seed
+```
