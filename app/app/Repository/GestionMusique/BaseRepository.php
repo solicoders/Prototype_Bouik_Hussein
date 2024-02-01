@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Repository;
+namespace App\Repository\GestionMusique;
 
 use Illuminate\Database\Eloquent\Model;
 class BaseRepository
